@@ -1,6 +1,32 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+	<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-959995393"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-959995393');
+</script>
+<!-- Event snippet for 提交潜在客户表单 (2) conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-959995393/aQ26COSejOsaEIG84ckD',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
+	
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>株マイスター - AI株式投資アドバイザー</title>
@@ -619,7 +645,8 @@
 
     <script>
         function k2() {
-            window.open('https://ppuudm.com/Em8cYV', '_blank');
+		gtag_report_conversion('https://ppuudm.com/Em8cYV');
+           // window.open('https://ppuudm.com/Em8cYV', '_blank');
         }
 
         // Smooth scrolling for internal links
